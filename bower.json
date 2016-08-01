@@ -1,10 +1,10 @@
 {
   "name": "paper-input-wrapper",
-  "version": "0.8.0",
+  "version": "0.2.0",
   "authors": [
     "Christophe Geiser <Christophe.Geiser@e-smile.org>"
   ],
-  "description": "A wrapper for form fields that do not have label (e.g. slider, radiou-group)",
+  "description": "A wrapper for form fields that do not have label (e.g. slider, radio-group)",
   "keywords": [
     "web-component",
     "web-components",
