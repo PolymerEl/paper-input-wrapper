@@ -1,0 +1,35 @@
+{
+  "name": "paper-input-wrapper",
+  "version": "0.8.0",
+  "authors": [
+    "Christophe Geiser <Christophe.Geiser@e-smile.org>"
+  ],
+  "description": "A wrapper for form fields that do not have label (e.g. slider, radiou-group)",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "form",
+    "paper-input",
+    "radio-group",
+    "polymer",
+    "seed"
+  ],
+  "main": "paper-input-wrapper.html",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "http://polymerel.github.io/paper-input-wrapper/components/paper-input-wrapper/",  
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0",
+    "paper-input": "PolymerElements/paper-input#^1.1.6",
+    "paper-radio-group": "PolymerElements/paper-radio-group#^1.0.9",
+    "paper-radio-button": "PolymerElements/paper-radio-button#^1.1.1"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  }
+}
