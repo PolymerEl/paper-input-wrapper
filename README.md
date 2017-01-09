@@ -1,56 +1,32 @@
-# seed-element
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://beta.webcomponents.org/element/polymerEl/paper-input-wrapper)
 
-An element providing a starting point for your own reusable Polymer elements.
+# \<paper-input-wrapper\>
+
+A simple wrapper for forms element that usually do not have `placeholders` or `labels` (e.g. \<paper-radio-group\>). 
+
+Example Usage:
+
+<!--
+```
+<custom-element-demo>
+  <template>
+    <link rel="import" href="paper-input-wrapper.html">
+    <link rel="import" href="../paper-radio-group/paper-radio-group.html">
+    <link rel="import" href="../paper-radio-button/paper-radio-button.html">
+  	<next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
+```
+-->
+```html
+ <paper-input-wrapper label="this is the label" placeholder="my placeholder" value="{{data}}">
+      <paper-radio-group class="select-content" selected="{{data}}">
+        <paper-radio-button name="small">Small</paper-radio-button>
+        <paper-radio-button name="medium">This is a long medium, just to check</paper-radio-button>
+        <paper-radio-button name="large">Large</paper-radio-button>
+      </paper-radio-group>
+    </paper-input-wrapper>
+
+```
 
 
-## Dependencies
-
-Element dependencies are managed via [Bower](http://bower.io/). You can
-install that via:
-
-    npm install -g bower
-
-Then, go ahead and download the element's dependencies:
-
-    bower install
-
-
-## Playing With Your Element
-
-If you wish to work on your element in isolation, we recommend that you use
-[Polyserve](https://github.com/PolymerLabs/polyserve) to keep your element's
-bower dependencies in line. You can install it via:
-
-    npm install -g polyserve
-
-And you can run it via:
-
-    polyserve
-
-Once running, you can preview your element at
-`http://localhost:8080/components/seed-element/`, where `seed-element` is the name of the directory containing it.
-
-
-## Testing Your Element
-
-Simply navigate to the `/test` directory of your element to run its tests. If
-you are using Polyserve: `http://localhost:8080/components/seed-element/test/`
-
-### web-component-tester
-
-The tests are compatible with [web-component-tester](https://github.com/Polymer/web-component-tester).
-Install it via:
-
-    npm install -g web-component-tester
-
-Then, you can run your tests on _all_ of your local browsers via:
-
-    wct
-
-#### WCT Tips
-
-`wct -l chrome` will only run tests in chrome.
-
-`wct -p` will keep the browsers alive after test runs (refresh to re-run).
-
-`wct test/some-file.html` will test only the files you specify.

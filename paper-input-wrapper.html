@@ -15,11 +15,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <!--
 Used as a container for form input that do not have a label or a placeholder (e.g. spinner, radiogroup, matrix, ...)
 
-## TODO : 
-- [ ] find a better name
-- [ ] handle `.hide-underline` at host level and as attribute (test with matrix)
- 
-@demo
+@demo demo/index.html
 -->
 <dom-module id="paper-input-wrapper">
   <style>
@@ -28,6 +24,13 @@ Used as a container for form input that do not have a label or a placeholder (e.
     @apply(--paper-input-wrapper);
   }
   
+  :host.layout.horizontal #content-container{
+    @apply(--layout-horizontal)
+  }
+  :host.layout.vertical #content-container{
+    @apply(--layout-vertical)
+  }
+
   ::content .hide-undeline>.underline {
     display: none;
   }
@@ -62,17 +65,11 @@ Used as a container for form input that do not have a label or a placeholder (e.
     }
     ;
   }
-  /*  paper-input-container ::content [prefix], paper-input-container ::content [suffix] {
-
-  }
-*/
   
   [placeholder] {
     color: var(--paper-input-radio-color, --secondary-text-color);
   }
-  /*  ::content.dropdown-content {
-    margin-top: 20px;
-  }*/
+
   </style>
   <template>
     <!-- <paper-input-container class="hide-undeline" no-label-float="[[noLabelFloat]]" always-float-label="[[_computeAlwaysFloatLabel(alwaysFloatLabel,placeholder)]]" auto-validate$="[[autoValidate]]" disabled$="[[disabled]]" invalid="[[invalid]]" on-paper-radio-group-changed="_onPaperRadioGroupChanged" > -->
@@ -80,8 +77,10 @@ Used as a container for form input that do not have a label or a placeholder (e.
       <content select="[prefix]"></content>
       <label hidden$="[[!label]]">[[label]]</label>
       <div placeholder hidden$="[[!placeholder]]">[[placeholder]]</div>
-      <content select="[suffix]"></content>
-      <content class="paper-input-input" id="content" select=":not([prefix]):not([suffix])"></content>
+      <div id="content-container">
+        <content select="[suffix]"></content>
+        <content class="paper-input-input" id="content" select=":not([prefix]):not([suffix])"></content>
+      </div>
       <template is="dom-if" if="[[errorMessage]]">
         <paper-input-error>[[errorMessage]]</paper-input-error>
       </template>

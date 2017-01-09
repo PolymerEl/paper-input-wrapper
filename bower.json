@@ -1,6 +1,6 @@
 {
   "name": "paper-input-wrapper",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "authors": [
     "Christophe Geiser <Christophe.Geiser@e-smile.org>"
   ],
@@ -25,11 +25,14 @@
   "dependencies": {
     "polymer": "Polymer/polymer#^1.0.0",
     "paper-input": "PolymerElements/paper-input#^1.1.6",
-    "paper-radio-group": "PolymerElements/paper-radio-group#^1.0.9",
-    "paper-radio-button": "PolymerElements/paper-radio-button#^1.1.1"
+    "iron-form-element-behavior": "PolymerElements/iron-form-element-behavior#^1.0.6"
   },
   "devDependencies": {
+    "paper-radio-button": "PolymerElements/paper-radio-button#^1.1.1",
+    "paper-radio-group": "PolymerElements/paper-radio-group#^1.0.9",
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "web-component-tester": "*"
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
+    "web-component-tester": "^4.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
   }
 }
