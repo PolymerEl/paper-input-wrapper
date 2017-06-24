@@ -49,6 +49,10 @@ Used as a container for form input that do not have a label or a placeholder (e.
     align-items : flex-end;
   }
 
+  :host:focus, paper-input-container:focus {
+    outline: none;
+  }
+
   paper-input-container {
     --paper-input-prefix: {
       max-width: 90px;
