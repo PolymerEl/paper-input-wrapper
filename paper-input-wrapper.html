@@ -30,6 +30,9 @@ Used as a container for form input that do not have a label or a placeholder (e.
   :host.layout.vertical #content-container{
     @apply(--layout-vertical)
   }
+  :host.layout paper-input-container {
+     @apply(--layout-flex-auto);
+  }
 
   ::content .hide-undeline>.underline {
     display: none;
