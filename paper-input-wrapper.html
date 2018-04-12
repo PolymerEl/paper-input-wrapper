@@ -18,7 +18,8 @@ Used as a container for form input that do not have a label or a placeholder (e.
 @demo demo/index.html
 -->
 <dom-module id="paper-input-wrapper">
-  <style>
+  <template>
+  <style is="custom-style">
   :host {
     display: block;
     @apply(--paper-input-wrapper);
@@ -34,7 +35,7 @@ Used as a container for form input that do not have a label or a placeholder (e.
      @apply(--layout-flex-auto);
   }
 
-  ::content .hide-underline>.underline {
+  .hide-underline ::content >.underline {
     display: none;
   }
   
@@ -79,7 +80,6 @@ Used as a container for form input that do not have a label or a placeholder (e.
   }
 
   </style>
-  <template>
     <!-- <paper-input-container class="hide-undeline" no-label-float="[[noLabelFloat]]" always-float-label="[[_computeAlwaysFloatLabel(alwaysFloatLabel,placeholder)]]" auto-validate$="[[autoValidate]]" disabled$="[[disabled]]" invalid="[[invalid]]" on-paper-radio-group-changed="_onPaperRadioGroupChanged" > -->
     <paper-input-container class="hide-underline" no-label-float="[[noLabelFloat]]" always-float-label auto-validate$="[[autoValidate]]" disabled$="[[disabled]]" invalid="[[invalid]]" on-paper-radio-group-changed="_onPaperRadioGroupChanged">
       <content select="[prefix]"></content>
