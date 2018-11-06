@@ -15,31 +15,44 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <title>seed-element Demo</title>
   <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+  <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+  <!-- Ensure Web Animations polyfill is loaded since neon-animation 2.0 doesn't import it -->
+  <link rel="import" href="../../neon-animation/web-animations.html">
   <link rel="import" href="../paper-input-wrapper.html">
   <link rel="import" href="../../paper-radio-group/paper-radio-group.html">
   <link rel="import" href="../../paper-radio-button/paper-radio-button.html">
 </head>
 
 <body unresolved>
-  <template is="dom-bind" id="app">
-    <h2>An example of <code>&lt;paper-input-wrapper&gt;</code>:</h2>
-    <div>
-      <p>value: {{data}}</p>
-    </div>
-    <paper-input-wrapper label="this is the label" placeholder="my placeholder" value="{{data}}">
-      <paper-radio-group class="select-content" selected="{{data}}">
-        <paper-radio-button name="small">Small</paper-radio-button>
-        <paper-radio-button name="medium">This is a long medium, just to check</paper-radio-button>
-        <paper-radio-button name="large">Large</paper-radio-button>
-      </paper-radio-group>
-    </paper-input-wrapper>
-  </template>
-  <script>
-  var app = document.querySelector('#app');
-  window.addEventListener('WebComponentsReady', function() {
-    app.data= "small";
-  });
-  </script>
+  <div class="vertical-section-container centered">
+    <h3>Basic paper-input-wrapper demo</h3>
+    <demo-snippet>
+      <template preserve-content>
+        <dom-bind id="app">
+          <template>
+            <h2>An example of <code>&lt;paper-input-wrapper&gt;</code>:</h2>
+            <div>
+              <p>value: {{data}}</p>
+            </div>
+            <paper-input-wrapper id="wrapper" label="this is the label" placeholder="my placeholder" value="{{data}}">
+              <paper-radio-group class="select-content" selected="{{data}}">
+                <paper-radio-button name="small">Small</paper-radio-button>
+                <paper-radio-button name="medium">This is a long medium, just to check</paper-radio-button>
+                <paper-radio-button name="large">Large</paper-radio-button>
+              </paper-radio-group>
+            </paper-input-wrapper>
+          </template>
+        </dom-bind>
+      </template>
+      <script>
+      window.addEventListener('WebComponentsReady', function() {
+        app = document.querySelector('#app');
+        app.data = "small";
+      });
+      </script>
+    </demo-snippet>
+  </div>
 </body>
 
 </html>

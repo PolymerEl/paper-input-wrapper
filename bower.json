@@ -1,6 +1,6 @@
 {
   "name": "paper-input-wrapper",
-  "version": "0.3.0",
+  "version": "2.0.0",
   "authors": [
     "Christophe Geiser <Christophe.Geiser@e-smile.org>"
   ],
@@ -15,24 +15,25 @@
     "seed"
   ],
   "main": "paper-input-wrapper.html",
-  "license": "http://polymer.github.io/LICENSE.txt",
-  "homepage": "http://polymerel.github.io/paper-input-wrapper/components/paper-input-wrapper/",  
+  "license": "MIT",
+  "homepage": "https://webcomponents.org/element/polymerEl/paper-input-wrapper",  
   "ignore": [
     "/.*",
     "/test/",
     "/demo/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.0.0",
-    "paper-input": "PolymerElements/paper-input#^1.1.6",
-    "iron-form-element-behavior": "PolymerElements/iron-form-element-behavior#^1.0.6"
+    "polymer": "Polymer/polymer#^2.0.0",
+    "paper-input": "PolymerElements/paper-input#^2.0.0"
   },
   "devDependencies": {
-    "paper-radio-button": "PolymerElements/paper-radio-button#^1.1.1",
-    "paper-radio-group": "PolymerElements/paper-radio-group#^1.0.9",
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
-    "web-component-tester": "^4.0.0",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+    "iron-component-page": "PolymerElements/iron-component-page#^3.0.0",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0",
+    "web-component-tester": "^6.0.0",
+    "paper-button": "PolymerElements/paper-button#^2.0.0",
+    "paper-radio-button": "PolymerElements/paper-radio-button#^2.0.0",
+    "paper-radio-group": "PolymerElements/paper-radio-group#^2.0.0"
   }
 }
