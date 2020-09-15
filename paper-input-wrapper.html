@@ -6,6 +6,13 @@
     :host {
       display: block;
       @apply --paper-input-wrapper;
+    
+      --paper-input-container-underline: {
+         display: none;
+        }
+       --paper-input-container-underline-focus: {
+        display: none;
+      }
     }
 
     :host.layout.horizontal .content-container {
@@ -21,18 +28,11 @@
     }
 
     .placeholder {
-      color: var(--paper-input-radio-color, --secondary-text-color);
+      color: var(--paper-input-placeholder-color, var(--secondary-text-color));
       font-size: var(--paper-input-wrapper-placehoder-size, 13px);
     }
 
     paper-input-container {
-      --paper-input-container-underline: {
-        display: none;
-      }
-
-      --paper-input-container-underline-focus: {
-        display: none;
-      }
 
       --paper-input-prefix: {
         max-width: 90px;
@@ -67,7 +67,6 @@
   <script>
   (function() {
 
-
     let subTemplate;
 
     customElements.whenDefined('paper-input').then(() => {
@@ -87,6 +86,13 @@
       class PaperInputWrapper extends PaperInput {
 
         static get is() { return 'paper-input-wrapper'; }
+
+        // Note(cg): this is a temp ugly hack as cannot override 
+        // hostAttributes applied while constructing PaperInput Class.
+        _ensureAttributes() {
+          super._ensureAttributes();
+          this.removeAttribute('tabindex');
+        }
 
         static get properties() {
           return {
@@ -115,6 +121,25 @@
             anchor.replaceChild(tplContent, anchor.querySelector('iron-input') || anchor.querySelector('input'));
           }
           return subTemplate;
+        }
+
+        // Note(cg): overriding this function is creating an error for element that do not have an `input` id.
+        _onIronInputReady() {
+
+          // Even though this is only used in the next line, save this for
+          // backwards compatibility, since the native input had this ID until 2.0.5.
+          if (!this.$.nativeInput) {
+            this.$.nativeInput = this.$$('input');
+          }
+          if (this.inputElement && this.$.nativeInput &&
+            this._typesThatHaveText.indexOf(this.$.nativeInput.type) !== -1) {
+            this.alwaysFloatLabel = true;
+          }
+
+          // Only validate when attached if the input already has a value.
+          if (!!this.inputElement.bindValue) {
+            this.$.container._handleValueAndAutoValidate(this.inputElement);
+          }
         }
       }
 
